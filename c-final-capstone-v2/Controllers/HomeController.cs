@@ -9,7 +9,7 @@ using System.Configuration;
 
 namespace c_final_capstone_v2.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : StaffController
     {
         ICatSqlDao catDao;
         ISkillDao skillDao;
@@ -17,8 +17,8 @@ namespace c_final_capstone_v2.Controllers
 
         public HomeController()
         {
-            this.catDao = new CatSqlDao(connectionString);
-            this.skillDao = new SkillDao(connectionString);
+            catDao = new CatSqlDao(connectionString);
+            skillDao = new SkillDao(connectionString);
         }
 
         public ActionResult Index()

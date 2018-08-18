@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@using c_final_capstone_v2.Models
+@{
+    //bool isLoggedIn = true;
+    //bool isLoggedIn = Session["IsLoggedIn"] as Boolean;
+    //Staff staff = Session["User"];
+}
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -18,7 +25,7 @@
                 </button>
                 @Html.ActionLink("Cat Employment", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
 
-                
+
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -27,7 +34,17 @@
                     <li>@Html.ActionLink("Care Tips", "CareTips", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Login", "Login", "User")</li>
+
+                    @*@if (isLoggedIn)
+                    {
+                        <li>@Html.ActionLink("Logout", "Logout", "User")</li>
+                    }
+                    else
+                    {*@
+                        <li>@Html.ActionLink("Login", "Login", "User")</li>
+                    }
+
+
                 </ul>
             </div>
         </div>
@@ -38,9 +55,9 @@
         <footer>
             <div>
 
-            <p>Applicats, Send Us Your Resume - Email Us At applicats@concat.cat</p>
-            <p>&copy; @DateTime.Now.Year - New Cats Available Now!</p>
-            <a href="http://localhost:52338/Home/Us"><img class="footer-gif" src="~/Content/gif/nyanCat.gif" /></a>
+                <p>Applicats, Send Us Your Resume - Email Us At applicats@concat.cat</p>
+                <p>&copy; @DateTime.Now.Year - New Cats Available Now!</p>
+                <a href="http://localhost:52338/Home/Us"><img class="footer-gif" src="~/Content/gif/nyanCat.gif" /></a>
             </div>
         </footer>
     </div>

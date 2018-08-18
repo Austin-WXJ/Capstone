@@ -10,38 +10,42 @@
     <title>Staff Login</title>
 </head>
 
-@using (Html.BeginForm("UserHome", "User", FormMethod.Post))
-{
-    <body>
+<body>
+    @using (Html.BeginForm("UserHome", "User", FormMethod.Post))
+    {
         <div>
             <img src="~/Content/img/login2.png" alt="Banner" width="100%" height="auto">
             <br />
-            <form>
+            <div class="form-horizontal">
+                <h4>LoginModel</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
-                <br><br>
-                @Html.LabelFor(m => m.Username)
-                @Html.TextBoxFor(m => m.Username, new { @class = "form-control", placeholder = "User Name" })
-                @Html.ValidationMessageFor(m => m.Username)
-                @Html.ValidationMessage("Invalid User")
-                <br />
-                @Html.LabelFor(m => m.Password)
-                @Html.TextBoxFor(m => m.Password, new { @class = "form-control", placeholder = "Password" })
-                @Html.ValidationMessageFor(m => m.Password)
-                @Html.ValidationMessage("Invalid Password")
-                <br />
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
-                <br><br>
-                <input type="submit" value="Submit">
-            </form>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Login" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
         </div>
-    </body>
 
-}
-
-@*<div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>
-    </body>*@
+    }
+</body>
 </html>
 
 

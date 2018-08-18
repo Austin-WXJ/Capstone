@@ -5,7 +5,8 @@ using System.Web;
 
 namespace c_final_capstone_v2.Models
 {
-    public class ReviewModel
+    public class NewReviewModel
     {
+
     }
 }

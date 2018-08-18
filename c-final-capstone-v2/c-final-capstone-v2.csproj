@@ -156,9 +156,10 @@
     <Compile Include="App_Start\NInjectWebCommons.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StaffController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DAL\CatSqlDao.cs" />
-    <Compile Include="DAL\StaffDao.cs" />
+    <Compile Include="DAL\UserDao.cs" />
     <Compile Include="DAL\Interface\ICatSqlDao.cs" />
     <Compile Include="DAL\Interface\ISkillDao.cs" />
     <Compile Include="DAL\Interface\IUserDao.cs" />
@@ -170,6 +171,7 @@
     <Compile Include="Models\Cat.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\NewStaffModel.cs" />
+    <Compile Include="Models\NewReviewModel.cs" />
     <Compile Include="Models\Staff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -251,6 +253,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Staff\" />
     <Folder Include="Views\Test\" />
   </ItemGroup>
   <ItemGroup>
